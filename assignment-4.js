@@ -16,7 +16,6 @@ function calculateMoney(numbers) {
 
 
 // Problem Number 2
-
 function checkName(name) {
     if (typeof name === 'string') {
         let lastInputValue = "Ayieouw";
@@ -36,21 +35,40 @@ function checkName(name) {
 
 
 // Problem num 3
-
 function deleteInvalids(array) {
 
-    let newUpdatArray = [];
+    let newUpdateArray = [];
 
     if (Array.isArray(array)) {
         for (let i = 0; i < array.length; i++) {
 
             if (typeof array[i] === 'number' && !isNaN(array[i])) {
-                newUpdatArray.push(array[i]);
+                newUpdateArray.push(array[i]);
             }
         }
-        return newUpdatArray;
+        return newUpdateArray;
     }
     else if (!Array.isArray(array)) {
         return "Invalid Array";
     }
+}
+
+// Problem 4
+function password(obj) {
+
+    if (!obj.name || !obj.siteName || !obj.birthYear) {
+        return "invalid";
+    }
+    else if (obj.birthYear.toString().length <= 3) {
+        return "invalid"
+    }
+
+    const webName = obj.siteName.charAt(0).toUpperCase() + obj.siteName.slice(1);
+    const birthYear = obj.birthYear;
+    const clientName = obj.name;
+
+    const outputData = webName + "#" + clientName + "@" + birthYear;
+
+    return outputData;
+
 }
