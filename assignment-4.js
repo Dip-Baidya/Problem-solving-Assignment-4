@@ -19,7 +19,7 @@ function calculateMoney(numbers) {
 
 function checkName(name) {
     if (typeof name === 'string') {
-        let lastInputValue = "ayieouw";
+        let lastInputValue = "Ayieouw";
         let inputLastIndexValue = name.charAt(name.length - 1).toLowerCase();
         for (let i = 0; i < lastInputValue.length; i++) {
             if (inputLastIndexValue === lastInputValue[i].toLowerCase()) {
@@ -27,30 +27,30 @@ function checkName(name) {
             }
         }
         return "bad name";
-        
+
     }
-    else if(typeof name !== 'string') {
+    else if (typeof name !== 'string') {
         return 'invalid';
     }
 }
 
 
-// Problem 3
-
+// Problem num 3
 
 function deleteInvalids(array) {
-    if (!Array.isArray(array)) {
-        return "Invalid Array"
-    }
-    let newArray = [];
-    for (let i = 0; i < array.length; i++) {
-        if (typeof array[i] === "number" && !isNaN(array[i])) {
-            newArray.push(array[i])
+
+    let newUpdatArray = [];
+
+    if (Array.isArray(array)) {
+        for (let i = 0; i < array.length; i++) {
+
+            if (typeof array[i] === 'number' && !isNaN(array[i])) {
+                newUpdatArray.push(array[i]);
+            }
         }
+        return newUpdatArray;
     }
-    return newArray;
+    else if (!Array.isArray(array)) {
+        return "Invalid Array";
+    }
 }
-
-
-const array= [1, null, undefined, 18, -19, NaN, "12", [1, 2], { ob: "lala" }];
-console.log(deleteInvalids(array));
